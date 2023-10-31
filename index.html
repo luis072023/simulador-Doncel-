@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<style>
+		/* Agregar estilos para resaltar el campo de entrada cuando se ingresa texto */
+		.input-form.has-val ~ .focus-input-form, .has-val:focus ~ .focus-input-form {
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		<div class="container-login">
+			<div class="wrap-login">
+				<form class="login-form">
+					<span class="login-form-title">
+						INGRESAR
+					</span>
+
+					<div class="wrap-input margin-top-35 margin-bottom-35">
+						<input class="input-form" type="text" name="email" autocomplete="off">
+						<span class="focus-input-form" data-placeholder="E-mail"></span>
+					</div>
+
+					<div class="wrap-input margin-bottom-35">
+						<input class="input-form" type="password" name="password">
+						<span class="focus-input-form" data-placeholder="Password"></span>
+					</div>
+
+					<div class="container-login-form-btn">
+						<button class="login-form-btn">
+							Login
+						</button>
+					</div>
+
+					<ul class="login-utils">
+						<li class="margin-bottom-8 margin-top-8">
+							<span class="text1">
+								olvide la contraseña.
+							</span>
+
+							<a href="#" class="text2">
+								contraseña
+							</a>
+						</li>
+
+						<li>
+							<span class="text1">
+								registrar?
+							</span>
+
+							<a href="#" class="text2">
+								Crear
+							</a>
+						</li>
+					</ul>
+				</form>
+			</div>
+			<img src="login.png" width="300" height="300" class="margin-left-50" />
+		</div>
+	</div>
+	
+	<script>
+		// Agregar clase "has-val" al campo de entrada cuando se ingresa texto
+		let inputs = document.getElementsByClassName('input-form');
+		for (let input of inputs) {
+			input.addEventListener("blur", function() {
+				if(input.value.trim() != ""){
+					input.classList.add("has-val");
+				} else {
+					input.classList.remove("has-val");
+				}
+			});
+		}
+	</script>
+
+</body>
+</html>
